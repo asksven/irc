@@ -281,12 +281,13 @@ static void welcome_suser(char *nick, struct stats_userlist *u, char *chan)
   reset_global_vars();
   glob_user = u;
   glob_nick = nick;
-  glob_slang = slang_find(coreslangs, slang_chanlang_get(chanlangs, chan));
-  if ((text = getslang_first(500))) {
-    dprintf(DP_HELP, "NOTICE %s :%s\n", nick, text);
-    while ((text = getslang_next()))
-      dprintf(DP_HELP, "NOTICE %s :%s\n", nick, text);
-  }
+// we don't want ot greet users
+//  glob_slang = slang_find(coreslangs, slang_chanlang_get(chanlangs, chan));
+//  if ((text = getslang_first(500))) {
+//    dprintf(DP_HELP, "NOTICE %s :%s\n", nick, text);
+//    while ((text = getslang_next()))
+//      dprintf(DP_HELP, "NOTICE %s :%s\n", nick, text);
+//  }
 }
 
 static int listsuser(locstats *ls, char *chan)
